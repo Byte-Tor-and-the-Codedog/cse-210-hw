@@ -6,13 +6,14 @@ class Program
     static void Main(string[] args)
     
     {
-        //text to be written to or edited
         Console.WriteLine("Welcome to the JournalHelper!");
+        //text to be written to or edited
         string workingText = "";
+        //variable that decides given task
         int foo = 1;
         while (foo >= 1 && foo <= 5)
         {
-            Console.WriteLine("What would you like to do?\n1.Write entry\n2.Add prompt\n3.Display\n4.Load\n5.Save\n6.Quit");
+            Console.Write("What would you like to do?\n1.Write entry\n2.Add prompt\n3.Display\n4.Load\n5.Save\n6.Quit\n>");
             foo = int.Parse(Console.ReadLine());
             if (foo == 1)
             {
@@ -45,6 +46,7 @@ class Program
                 Console.WriteLine($"{workingText}");
             }
             if (foo == 4)
+            //Allows you to see all the entries saved into the journal file and choose to add to them.
             {
                 string path = "journal";
                 string[] allFiles = Directory.GetFileSystemEntries(path);
@@ -61,6 +63,7 @@ class Program
                 {
                     workingText = File.ReadAllText($"{fileToLoad}");
                 }
+                //safeguard in case some accidentally overwrites something they were working on
                 else
                     {
                         Console.Write("Are you sure you want to overwrite current work y/n?>");
@@ -75,6 +78,7 @@ class Program
                         }
                     }
                 }
+                //making sure the program doesn't crash if you get the name wrong
                 else
                 {
                     Console.WriteLine("File not found: aborted");

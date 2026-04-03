@@ -5,6 +5,7 @@ class Prompt
 
 {
     public string _prompttext;
+    //Gives you the ability to add prompts to keep things interesting
     public void AddPrompt(string path)
     {
         using (StreamWriter outputFile = new StreamWriter(path, append: true))
@@ -13,6 +14,7 @@ class Prompt
                     }
     }
     private static Random random = new Random();
+    //Acquiring a randomized prompt from the pool
     public static string GetPrompt(string path)
     {
         string[] allLines = File.ReadAllLines(path);
