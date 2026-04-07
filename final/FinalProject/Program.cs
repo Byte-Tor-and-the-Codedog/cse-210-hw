@@ -8,7 +8,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string game = "default.txt";
+        string game = "..\\..\\..\\default.txt";
         GameRecord game1 = new GameRecord();
         game1.ParseGameText(game);
         BoardState b1 = new BoardState();
@@ -20,6 +20,7 @@ class Program
             {
                 if(i == 0)
                 {
+                    //I put the beginning position in here so it completely clears and doesn't hover above the whole time like it did during testing
                     b1.PrintBoard();
                     Console.ReadKey(true);
                     Console.Clear();

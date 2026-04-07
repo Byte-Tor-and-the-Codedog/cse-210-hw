@@ -9,6 +9,9 @@ public class GameRecord
     }
     public void ParseGameText(string game)
     {
+        //theoretically I could use this to take cli arguments and do various games but I haven't done that yet.
+        //this breaks the text of the game into turns.
+        //I used the scholar's mate as the default example because it's short and recognizable
         List<Turn> turns = new List<Turn>();
         foreach(string line in File.ReadLines(game))
         {

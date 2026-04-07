@@ -55,6 +55,7 @@ public class BoardState
                 Console.Write("\n");
             }
         }
+    //constructs the basic default setup of a chess game. I could add a custom constructor to play games like fischer random but I didn't need to to do that for this project.
     public BoardState()
         {
             _board = new Space[8, 8];
